@@ -20,27 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="1、 Ares2.0 关于自定义导弹的翻译[AircraftType]?Missile.Custom&#x3D; (boolean) 是否为自定义导弹[AircraftType]&gt;Missile.PauseFrames&#x3D; (integer)  发射前延迟integer桢[AircraftType]&gt;Missile.TiltFrames&#x3D; (integer)    从">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2022/05/18/hello-world/index.html">
+<meta property="og:title" content="自定义导弹翻译以及实例">
+<meta property="og:url" content="http://example.com/2022/05/18/RA2-DIY/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E5%BC%B9%E7%BF%BB%E8%AF%91%E4%BB%A5%E5%8F%8A%E5%AE%9E%E4%BE%8B/index.html">
 <meta property="og:site_name" content="Y&#39;blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="1、 Ares2.0 关于自定义导弹的翻译[AircraftType]?Missile.Custom&#x3D; (boolean) 是否为自定义导弹[AircraftType]&gt;Missile.PauseFrames&#x3D; (integer)  发射前延迟integer桢[AircraftType]&gt;Missile.TiltFrames&#x3D; (integer)    从">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-18T08:47:04.501Z">
-<meta property="article:modified_time" content="2022-05-18T08:47:04.501Z">
+<meta property="article:published_time" content="2022-05-18T11:10:03.243Z">
+<meta property="article:modified_time" content="2022-03-25T04:13:32.000Z">
 <meta property="article:author" content="MR.Y">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2022/05/18/hello-world/">
+<link rel="canonical" href="http://example.com/2022/05/18/RA2-DIY/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E5%BC%B9%E7%BF%BB%E8%AF%91%E4%BB%A5%E5%8F%8A%E5%AE%9E%E4%BE%8B/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/05/18/hello-world/","path":"2022/05/18/hello-world/","title":"Hello World"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/05/18/RA2-DIY/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E5%BC%B9%E7%BF%BB%E8%AF%91%E4%BB%A5%E5%8F%8A%E5%AE%9E%E4%BE%8B/","path":"2022/05/18/RA2-DIY/自定义导弹翻译以及实例/","title":"自定义导弹翻译以及实例"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hello World | Y'blog</title>
+<title>自定义导弹翻译以及实例 | Y'blog</title>
   
 
 
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81-Ares2-0-%E5%85%B3%E4%BA%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E5%BC%B9%E7%9A%84%E7%BF%BB%E8%AF%91"><span class="nav-text">1、 Ares2.0 关于自定义导弹的翻译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%AF%E7%94%A8%E5%AF%BC%E5%BC%B9"><span class="nav-text">2、自定义可用导弹</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -205,7 +205,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/18/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/18/RA2-DIY/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E5%BC%B9%E7%BF%BB%E8%AF%91%E4%BB%A5%E5%8F%8A%E5%AE%9E%E4%BE%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -218,12 +218,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Hello World | Y'blog">
+      <meta itemprop="name" content="自定义导弹翻译以及实例 | Y'blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          自定义导弹翻译以及实例
         </h1>
 
         <div class="post-meta-container">
@@ -234,7 +234,23 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-05-18 08:47:04" itemprop="dateCreated datePublished" datetime="2022-05-18T08:47:04+00:00">2022-05-18</time>
+      <time title="创建时间：2022-05-18 11:10:03" itemprop="dateCreated datePublished" datetime="2022-05-18T11:10:03+00:00">2022-05-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-03-25 04:13:32" itemprop="dateModified" datetime="2022-03-25T04:13:32+00:00">2022-03-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/RA2-DIY/" itemprop="url" rel="index"><span itemprop="name">RA2 DIY</span></a>
+        </span>
     </span>
 
   
@@ -247,19 +263,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <h3 id="1、-Ares2-0-关于自定义导弹的翻译"><a href="#1、-Ares2-0-关于自定义导弹的翻译" class="headerlink" title="1、 Ares2.0 关于自定义导弹的翻译"></a>1、 Ares2.0 关于自定义导弹的翻译</h3><p>[AircraftType]?Missile.Custom&#x3D; (boolean) 是否为自定义导弹<br>[AircraftType]&gt;Missile.PauseFrames&#x3D; (integer)  发射前延迟integer桢<br>[AircraftType]&gt;Missile.TiltFrames&#x3D; (integer)    从导弹开始上移到真正点火为integer桢（v3 60）<br>[AircraftType]&gt;Missile.PitchInitial&#x3D; (float) 导弹初始倾斜为float<em>90度（v3 0.21）<br>[AircraftType]&gt;Missile.PitchFinal&#x3D; (float)  导弹点火倾斜为float</em>90度<br>[AircraftType]&gt;Missile.TurnRate&#x3D; (float)    导弹拐弯速率<br>[AircraftType]&gt;Missile.RaiseRate&#x3D; (float)    每次导弹升高多少 只对巡航导弹有效<br>[AircraftType]&gt;Missile.Acceleration&#x3D; (float)  发射加速度（V3为0.4）<br>[AircraftType]&gt;Missile.Altitude&#x3D; (integer)   达到这么高后水平移动&#x2F; （V3为768）<br>[AircraftType]&gt;Missile.Damage&#x3D; (integer)    伤害2<br>[AircraftType]&gt;Missile.EliteDamage&#x3D; (integer) 精英伤害<br>[AircraftType]&gt;Missile.BodyLength&#x3D; (integer)  导弹长<br>[AircraftType]&gt;Missile.LazyCurve&#x3D; (boolean) 是否是曲线弹道<br>[AircraftType]&gt;Missile.Warhead&#x3D; (Warhead)<br>[AircraftType]&gt;Missile.EliteWarhead&#x3D; (Warhead)<br>[AircraftType]&gt;Missile.TakeOffAnim&#x3D; (Animation) 起飞动画<br>[AircraftType]&gt;Missile.TrailerAnim&#x3D; (Animation) 拖车动画<br>[AircraftType]&gt;Missile.TrailerSeparation&#x3D; (integer) 拖车分离<br>新增的可选语句<br>[AircraftType]&gt;Missile.Weapon&#x3D; (Weapon)<br>导弹用这个武器来产生伤害，意味着可以很简单地做带辐射的导弹。<br>如果不设置，就用Missile.Damage和Missile.Warhead产生伤害<br>[AircraftType]&gt;Missile.EliteWeapon&#x3D; (Weapon)<br>三星时用的武器</p>
+<h3 id="2、自定义可用导弹"><a href="#2、自定义可用导弹" class="headerlink" title="2、自定义可用导弹"></a>2、自定义可用导弹</h3><p>[VladMissile];注册到飞行器列表里<br>Image&#x3D;V3ROCKET<br>UIName&#x3D;Name:CRMISL<br>Name&#x3D;Long Range Cruise Missile<br>FireAngle&#x3D;0<br>Strength&#x3D;250<br>Primary&#x3D;CruiseMissileWeapon   ；这个是给导弹锁定目标的武器，无效果但range值需要设定小点1即可<br>Category&#x3D;AirPower<br>Armor&#x3D;special_2<br>TechLevel&#x3D;-1<br>Sight&#x3D;1<br>RadarInvisible&#x3D;yes<br>Landable&#x3D;yes<br>MoveToShroud&#x3D;yes<br>Ammo&#x3D;1<br>Speed&#x3D;40<br>Owner&#x3D;Germans,Africans,British    ;不要在意所有者<br>Cost&#x3D;50<br>Points&#x3D;20<br>ROT&#x3D;5<br>Crewed&#x3D;no<br>Explodes&#x3D;no<br>GuardRange&#x3D;30<br>Explosion&#x3D;TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60<br>MaxDebris&#x3D;2<br>Locomotor&#x3D;{B7B49766-E576-11d3-9BD9-00104B972FE8}<br>MovementZone&#x3D;Fly<br>ThreatPosed&#x3D;50<br>DamageParticleSystems&#x3D;SmallGreySSys<br>AuxSound1&#x3D;Dummy<br>ImmuneToPsionics&#x3D;yes<br>NoShadow&#x3D;yes<br>Selectable&#x3D;no<br>Trainable&#x3D;no<br>DontScore&#x3D;yes<br>Missile.Custom&#x3D;yes<br>Missile.PauseFrames&#x3D;0<br>Missile.TiltFrames&#x3D;1<br>Missile.PitchInitial&#x3D;1<br>Missile.PitchFinal&#x3D;1<br>Missile.TurnRate&#x3D;0.5<br>Missile.RaiseRate&#x3D;1<br>Missile.Acceleration&#x3D;1<br>Missile.Altitude&#x3D;2000<br>Missile.BodyLength&#x3D;256<br>Missile.LazyCurve&#x3D;no<br>;Missile.TakeOffAnim&#x3D;SPNUKE<br>;Missile.TrailerAnim&#x3D;SPNUKE<br>Missile.Warhead&#x3D;MWAR;爆炸的动画效果在弹头上<br>Missile.TrailerSeparation&#x3D;2<br>Missile.Damage&#x3D;500<br>Missile.EliteDamage&#x3D;500</p>
 
     </div>
 
@@ -273,13 +278,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2019/01/14/HEXO/HEXO%E6%A0%BC%E5%BC%8F/" rel="prev" title="HEXO书写格式">
-                  <i class="fa fa-chevron-left"></i> HEXO书写格式
+                <a href="/2022/05/18/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/05/18/RA2-DIY/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E5%BC%B9%E7%BF%BB%E8%AF%91%E4%BB%A5%E5%8F%8A%E5%AE%9E%E4%BE%8B/" rel="next" title="自定义导弹翻译以及实例">
-                  自定义导弹翻译以及实例 <i class="fa fa-chevron-right"></i>
+                <a href="/2022/05/18/RA2-DIY/%E7%96%AF%E7%8B%82%E4%BC%8A%E6%96%87/" rel="next" title="疯狂伊文">
+                  疯狂伊文 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
