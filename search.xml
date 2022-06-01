@@ -4,6 +4,82 @@
   
     
     <entry>
+      <title>自定义导弹翻译以及实例</title>
+      <link href="/2022/06/01/RA2-DIY/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E5%BC%B9%E7%BF%BB%E8%AF%91%E4%BB%A5%E5%8F%8A%E5%AE%9E%E4%BE%8B/"/>
+      <url>/2022/06/01/RA2-DIY/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E5%BC%B9%E7%BF%BB%E8%AF%91%E4%BB%A5%E5%8F%8A%E5%AE%9E%E4%BE%8B/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1、-Ares2-0-关于自定义导弹的翻译"><a href="#1、-Ares2-0-关于自定义导弹的翻译" class="headerlink" title="1、 Ares2.0 关于自定义导弹的翻译"></a>1、 Ares2.0 关于自定义导弹的翻译</h3><p>[AircraftType]?Missile.Custom&#x3D; (boolean) 是否为自定义导弹<br>[AircraftType]&gt;Missile.PauseFrames&#x3D; (integer)  发射前延迟integer桢<br>[AircraftType]&gt;Missile.TiltFrames&#x3D; (integer)    从导弹开始上移到真正点火为integer桢（v3 60）<br>[AircraftType]&gt;Missile.PitchInitial&#x3D; (float) 导弹初始倾斜为float<em>90度（v3 0.21）<br>[AircraftType]&gt;Missile.PitchFinal&#x3D; (float)  导弹点火倾斜为float</em>90度<br>[AircraftType]&gt;Missile.TurnRate&#x3D; (float)    导弹拐弯速率<br>[AircraftType]&gt;Missile.RaiseRate&#x3D; (float)    每次导弹升高多少 只对巡航导弹有效<br>[AircraftType]&gt;Missile.Acceleration&#x3D; (float)  发射加速度（V3为0.4）<br>[AircraftType]&gt;Missile.Altitude&#x3D; (integer)   达到这么高后水平移动&#x2F; （V3为768）<br>[AircraftType]&gt;Missile.Damage&#x3D; (integer)    伤害2<br>[AircraftType]&gt;Missile.EliteDamage&#x3D; (integer) 精英伤害<br>[AircraftType]&gt;Missile.BodyLength&#x3D; (integer)  导弹长<br>[AircraftType]&gt;Missile.LazyCurve&#x3D; (boolean) 是否是曲线弹道<br>[AircraftType]&gt;Missile.Warhead&#x3D; (Warhead)<br>[AircraftType]&gt;Missile.EliteWarhead&#x3D; (Warhead)<br>[AircraftType]&gt;Missile.TakeOffAnim&#x3D; (Animation) 起飞动画<br>[AircraftType]&gt;Missile.TrailerAnim&#x3D; (Animation) 拖车动画<br>[AircraftType]&gt;Missile.TrailerSeparation&#x3D; (integer) 拖车分离<br>新增的可选语句<br>[AircraftType]&gt;Missile.Weapon&#x3D; (Weapon)<br>导弹用这个武器来产生伤害，意味着可以很简单地做带辐射的导弹。<br>如果不设置，就用Missile.Damage和Missile.Warhead产生伤害<br>[AircraftType]&gt;Missile.EliteWeapon&#x3D; (Weapon)<br>三星时用的武器</p><h3 id="2、自定义可用导弹"><a href="#2、自定义可用导弹" class="headerlink" title="2、自定义可用导弹"></a>2、自定义可用导弹</h3><p>[VladMissile];注册到飞行器列表里<br>Image&#x3D;V3ROCKET<br>UIName&#x3D;Name:CRMISL<br>Name&#x3D;Long Range Cruise Missile<br>FireAngle&#x3D;0<br>Strength&#x3D;250<br>Primary&#x3D;CruiseMissileWeapon   ；这个是给导弹锁定目标的武器，无效果但range值需要设定小点1即可<br>Category&#x3D;AirPower<br>Armor&#x3D;special_2<br>TechLevel&#x3D;-1<br>Sight&#x3D;1<br>RadarInvisible&#x3D;yes<br>Landable&#x3D;yes<br>MoveToShroud&#x3D;yes<br>Ammo&#x3D;1<br>Speed&#x3D;40<br>Owner&#x3D;Germans,Africans,British    ;不要在意所有者<br>Cost&#x3D;50<br>Points&#x3D;20<br>ROT&#x3D;5<br>Crewed&#x3D;no<br>Explodes&#x3D;no<br>GuardRange&#x3D;30<br>Explosion&#x3D;TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60<br>MaxDebris&#x3D;2<br>Locomotor&#x3D;{B7B49766-E576-11d3-9BD9-00104B972FE8}<br>MovementZone&#x3D;Fly<br>ThreatPosed&#x3D;50<br>DamageParticleSystems&#x3D;SmallGreySSys<br>AuxSound1&#x3D;Dummy<br>ImmuneToPsionics&#x3D;yes<br>NoShadow&#x3D;yes<br>Selectable&#x3D;no<br>Trainable&#x3D;no<br>DontScore&#x3D;yes<br>Missile.Custom&#x3D;yes<br>Missile.PauseFrames&#x3D;0<br>Missile.TiltFrames&#x3D;1<br>Missile.PitchInitial&#x3D;1<br>Missile.PitchFinal&#x3D;1<br>Missile.TurnRate&#x3D;0.5<br>Missile.RaiseRate&#x3D;1<br>Missile.Acceleration&#x3D;1<br>Missile.Altitude&#x3D;2000<br>Missile.BodyLength&#x3D;256<br>Missile.LazyCurve&#x3D;no<br>;Missile.TakeOffAnim&#x3D;SPNUKE<br>;Missile.TrailerAnim&#x3D;SPNUKE<br>Missile.Warhead&#x3D;MWAR;爆炸的动画效果在弹头上<br>Missile.TrailerSeparation&#x3D;2<br>Missile.Damage&#x3D;500<br>Missile.EliteDamage&#x3D;500</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> RA2 DIY </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>N1刷入openwrt</title>
+      <link href="/2022/06/01/OPENWRT/N1%E5%88%B7%E5%85%A5openwrt/"/>
+      <url>/2022/06/01/OPENWRT/N1%E5%88%B7%E5%85%A5openwrt/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1、所用固件"><a href="#1、所用固件" class="headerlink" title="1、所用固件"></a>1、所用固件</h3><p>E:\backup\other\N1固件 </p><h3 id="2、将镜像刷入U盘"><a href="#2、将镜像刷入U盘" class="headerlink" title="2、将镜像刷入U盘"></a>2、将镜像刷入U盘</h3><p>使用的软件：balenaEtcher-Portable-1.7.8</p><h3 id="3、IP地址"><a href="#3、IP地址" class="headerlink" title="3、IP地址"></a>3、IP地址</h3><p>192.168.1.1</p><h3 id="4、将系统刷入EMMC"><a href="#4、将系统刷入EMMC" class="headerlink" title="4、将系统刷入EMMC"></a>4、将系统刷入EMMC</h3><p>cd  &#x2F;root   &amp;&amp;   .&#x2F;install-to-emmc.sh</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> OPENWRT </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>N1 openwrt挂载clouddrive</title>
+      <link href="/2022/06/01/DOCKER/N1%E6%8C%82%E8%BD%BDclouddrive/"/>
+      <url>/2022/06/01/DOCKER/N1%E6%8C%82%E8%BD%BDclouddrive/</url>
+      
+        <content type="html"><![CDATA[<p>需要在docker ce中开启允许WAN访问</p><h3 id="1、开启MountFlags"><a href="#1、开启MountFlags" class="headerlink" title="1、开启MountFlags"></a>1、开启MountFlags</h3><p>mkdir -p &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;docker.service.d&#x2F;<br>cat &lt;<EOF > &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;docker.service.d&#x2F;clear_mount_propagation_flags.conf<br>[Service]<br>MountFlags&#x3D;shared<br>EOF</p><h3 id="2、开启share类型挂载"><a href="#2、开启share类型挂载" class="headerlink" title="2、开启share类型挂载"></a>2、开启share类型挂载</h3><p>mount –make-shared &#x2F;mnt&#x2F;mmcblk2p4 </p><h3 id="3、创建容器"><a href="#3、创建容器" class="headerlink" title="3、创建容器"></a>3、创建容器</h3><p>docker run –name clouddrive -v &#x2F;mnt&#x2F;mmcblk2p4&#x2F;CloudNAS&#x2F;clouddrive:&#x2F;CloudNAS:shared -v &#x2F;mnt&#x2F;mmcblk2p4&#x2F;CloudNAS&#x2F;config:&#x2F;Config -p 9798:9798&#x2F;tcp –privileged –device &#x2F;dev&#x2F;fuse:&#x2F;dev&#x2F;fuse -d cloudnas&#x2F;clouddrive</p><h3 id="4、将"><a href="#4、将" class="headerlink" title="4、将"></a>4、将</h3><p> mount –make-shared &#x2F;mnt&#x2F;mmcblk2p4<br> 添加到启动项内 置于exit0上</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> DOCKER </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Docker安装hexo</title>
+      <link href="/2022/06/01/DOCKER/docker%E5%AE%89%E8%A3%85hexo/"/>
+      <url>/2022/06/01/DOCKER/docker%E5%AE%89%E8%A3%85hexo/</url>
+      
+        <content type="html"><![CDATA[<h3 id="执行语句"><a href="#执行语句" class="headerlink" title="执行语句"></a>执行语句</h3><p>docker run -d <br>  –name blog <br>  –restart&#x3D;always <br>  -p 4000:4000 <br>  -v &#x2F;docker&#x2F;hexo:&#x2F;hexo <br>  lstcml&#x2F;hexo</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> HEXO </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Next主题美化</title>
       <link href="/2022/05/19/HEXO/Next-Set/"/>
       <url>/2022/05/19/HEXO/Next-Set/</url>
@@ -28,44 +104,6 @@
       <url>/2022/05/19/DOCKER/docker%E5%AE%89%E8%A3%85webdav%E6%9C%8D%E5%8A%A1/</url>
       
         <content type="html"><![CDATA[<p>docker run –name webdav <br>  –restart&#x3D;unless-stopped <br>  -p 580:80 <br>  -v &#x2F;mnt&#x2F;sda1:&#x2F;media <br>  -e USERNAME&#x3D; 用户名 <br>  -e PASSWORD&#x3D;密码 <br>  -e TZ&#x3D;Asia&#x2F;Shanghai  <br>  -e UDI&#x3D;1000 <br>  -e GID&#x3D;1000 <br>  -d  ugeek&#x2F;webdav:arm</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> DOCKER </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Docker安装hexo</title>
-      <link href="/2022/05/19/DOCKER/docker%E5%AE%89%E8%A3%85hexo/"/>
-      <url>/2022/05/19/DOCKER/docker%E5%AE%89%E8%A3%85hexo/</url>
-      
-        <content type="html"><![CDATA[<h3 id="执行语句"><a href="#执行语句" class="headerlink" title="执行语句"></a>执行语句</h3><p>docker run -d <br>  –name blog <br>  –restart&#x3D;always <br>  -p 4000:4000 <br>  -v &#x2F;docker&#x2F;hexo:&#x2F;hexo <br>  lstcml&#x2F;hexo</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> DOCKER </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>N1 openwrt挂载clouddrive</title>
-      <link href="/2022/05/18/DOCKER/N1%E6%8C%82%E8%BD%BDclouddrive/"/>
-      <url>/2022/05/18/DOCKER/N1%E6%8C%82%E8%BD%BDclouddrive/</url>
-      
-        <content type="html"><![CDATA[<p>需要在docker ce中开启允许WAN访问</p><h3 id="1、开启MountFlags"><a href="#1、开启MountFlags" class="headerlink" title="1、开启MountFlags"></a>1、开启MountFlags</h3><p>mkdir -p &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;docker.service.d&#x2F;<br>cat &lt;<EOF > &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;docker.service.d&#x2F;clear_mount_propagation_flags.conf<br>[Service]<br>MountFlags&#x3D;shared<br>EOF</p><h3 id="2、开启share类型挂载"><a href="#2、开启share类型挂载" class="headerlink" title="2、开启share类型挂载"></a>2、开启share类型挂载</h3><p>mount –make-shared &#x2F;mnt&#x2F;mmcblk2p4 </p><h3 id="3、创建容器"><a href="#3、创建容器" class="headerlink" title="3、创建容器"></a>3、创建容器</h3><p>docker run –name clouddrive -v &#x2F;mnt&#x2F;mmcblk2p4&#x2F;CloudNAS&#x2F;clouddrive:&#x2F;CloudNAS:shared -v &#x2F;mnt&#x2F;mmcblk2p4&#x2F;CloudNAS&#x2F;config:&#x2F;Config -p 9798:9798&#x2F;tcp –privileged –device &#x2F;dev&#x2F;fuse:&#x2F;dev&#x2F;fuse -d cloudnas&#x2F;clouddrive</p><h3 id="4、将"><a href="#4、将" class="headerlink" title="4、将"></a>4、将</h3><p> mount –make-shared &#x2F;mnt&#x2F;mmcblk2p4<br> 添加到启动项内 置于exit0上</p>]]></content>
       
       
       <categories>
@@ -118,49 +156,11 @@
     
     
     <entry>
-      <title>N1刷入openwrt</title>
-      <link href="/2022/05/18/OPENWRT/N1%E5%88%B7%E5%85%A5openwrt/"/>
-      <url>/2022/05/18/OPENWRT/N1%E5%88%B7%E5%85%A5openwrt/</url>
-      
-        <content type="html"><![CDATA[<h3 id="1、所用固件"><a href="#1、所用固件" class="headerlink" title="1、所用固件"></a>1、所用固件</h3><p>E:\backup\other\N1固件 </p><h3 id="2、将镜像刷入U盘"><a href="#2、将镜像刷入U盘" class="headerlink" title="2、将镜像刷入U盘"></a>2、将镜像刷入U盘</h3><p>使用的软件：balenaEtcher-Portable-1.7.8</p><h3 id="3、IP地址"><a href="#3、IP地址" class="headerlink" title="3、IP地址"></a>3、IP地址</h3><p>192.168.1.1</p><h3 id="4、将系统刷入EMMC"><a href="#4、将系统刷入EMMC" class="headerlink" title="4、将系统刷入EMMC"></a>4、将系统刷入EMMC</h3><p>cd  &#x2F;root   &amp;&amp;   .&#x2F;install-to-emmc.sh</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> OPENWRT </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>疯狂伊文</title>
       <link href="/2022/05/18/RA2-DIY/%E7%96%AF%E7%8B%82%E4%BC%8A%E6%96%87/"/>
       <url>/2022/05/18/RA2-DIY/%E7%96%AF%E7%8B%82%E4%BC%8A%E6%96%87/</url>
       
         <content type="html"><![CDATA[<h3 id="红警2角色：疯狂伊文"><a href="#红警2角色：疯狂伊文" class="headerlink" title="红警2角色：疯狂伊文"></a>红警2角色：疯狂伊文</h3><p>“Happy Birthday!<br>-给敌人送上一份“大礼”的疯狂伊文”</p><p>疯狂伊文是苏维埃联盟的通用单位。他们是一群疯狂的炸弹专家，无论是步兵、载具还是建筑，凡是有可能安上炸弹的地方都逃不过他们的魔爪。必要时他们甚至能毫不犹豫地往自己人身上安装炸弹。他们还擅长游泳，能从意想不到的地方给敌人带来“惊喜”。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> RA2 DIY </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>自定义导弹翻译以及实例</title>
-      <link href="/2022/05/18/RA2-DIY/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E5%BC%B9%E7%BF%BB%E8%AF%91%E4%BB%A5%E5%8F%8A%E5%AE%9E%E4%BE%8B/"/>
-      <url>/2022/05/18/RA2-DIY/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E5%BC%B9%E7%BF%BB%E8%AF%91%E4%BB%A5%E5%8F%8A%E5%AE%9E%E4%BE%8B/</url>
-      
-        <content type="html"><![CDATA[<h3 id="1、-Ares2-0-关于自定义导弹的翻译"><a href="#1、-Ares2-0-关于自定义导弹的翻译" class="headerlink" title="1、 Ares2.0 关于自定义导弹的翻译"></a>1、 Ares2.0 关于自定义导弹的翻译</h3><p>[AircraftType]?Missile.Custom&#x3D; (boolean) 是否为自定义导弹<br>[AircraftType]&gt;Missile.PauseFrames&#x3D; (integer)  发射前延迟integer桢<br>[AircraftType]&gt;Missile.TiltFrames&#x3D; (integer)    从导弹开始上移到真正点火为integer桢（v3 60）<br>[AircraftType]&gt;Missile.PitchInitial&#x3D; (float) 导弹初始倾斜为float<em>90度（v3 0.21）<br>[AircraftType]&gt;Missile.PitchFinal&#x3D; (float)  导弹点火倾斜为float</em>90度<br>[AircraftType]&gt;Missile.TurnRate&#x3D; (float)    导弹拐弯速率<br>[AircraftType]&gt;Missile.RaiseRate&#x3D; (float)    每次导弹升高多少 只对巡航导弹有效<br>[AircraftType]&gt;Missile.Acceleration&#x3D; (float)  发射加速度（V3为0.4）<br>[AircraftType]&gt;Missile.Altitude&#x3D; (integer)   达到这么高后水平移动&#x2F; （V3为768）<br>[AircraftType]&gt;Missile.Damage&#x3D; (integer)    伤害2<br>[AircraftType]&gt;Missile.EliteDamage&#x3D; (integer) 精英伤害<br>[AircraftType]&gt;Missile.BodyLength&#x3D; (integer)  导弹长<br>[AircraftType]&gt;Missile.LazyCurve&#x3D; (boolean) 是否是曲线弹道<br>[AircraftType]&gt;Missile.Warhead&#x3D; (Warhead)<br>[AircraftType]&gt;Missile.EliteWarhead&#x3D; (Warhead)<br>[AircraftType]&gt;Missile.TakeOffAnim&#x3D; (Animation) 起飞动画<br>[AircraftType]&gt;Missile.TrailerAnim&#x3D; (Animation) 拖车动画<br>[AircraftType]&gt;Missile.TrailerSeparation&#x3D; (integer) 拖车分离<br>新增的可选语句<br>[AircraftType]&gt;Missile.Weapon&#x3D; (Weapon)<br>导弹用这个武器来产生伤害，意味着可以很简单地做带辐射的导弹。<br>如果不设置，就用Missile.Damage和Missile.Warhead产生伤害<br>[AircraftType]&gt;Missile.EliteWeapon&#x3D; (Weapon)<br>三星时用的武器</p><h3 id="2、自定义可用导弹"><a href="#2、自定义可用导弹" class="headerlink" title="2、自定义可用导弹"></a>2、自定义可用导弹</h3><p>[VladMissile];注册到飞行器列表里<br>Image&#x3D;V3ROCKET<br>UIName&#x3D;Name:CRMISL<br>Name&#x3D;Long Range Cruise Missile<br>FireAngle&#x3D;0<br>Strength&#x3D;250<br>Primary&#x3D;CruiseMissileWeapon   ；这个是给导弹锁定目标的武器，无效果但range值需要设定小点1即可<br>Category&#x3D;AirPower<br>Armor&#x3D;special_2<br>TechLevel&#x3D;-1<br>Sight&#x3D;1<br>RadarInvisible&#x3D;yes<br>Landable&#x3D;yes<br>MoveToShroud&#x3D;yes<br>Ammo&#x3D;1<br>Speed&#x3D;40<br>Owner&#x3D;Germans,Africans,British    ;不要在意所有者<br>Cost&#x3D;50<br>Points&#x3D;20<br>ROT&#x3D;5<br>Crewed&#x3D;no<br>Explodes&#x3D;no<br>GuardRange&#x3D;30<br>Explosion&#x3D;TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60<br>MaxDebris&#x3D;2<br>Locomotor&#x3D;{B7B49766-E576-11d3-9BD9-00104B972FE8}<br>MovementZone&#x3D;Fly<br>ThreatPosed&#x3D;50<br>DamageParticleSystems&#x3D;SmallGreySSys<br>AuxSound1&#x3D;Dummy<br>ImmuneToPsionics&#x3D;yes<br>NoShadow&#x3D;yes<br>Selectable&#x3D;no<br>Trainable&#x3D;no<br>DontScore&#x3D;yes<br>Missile.Custom&#x3D;yes<br>Missile.PauseFrames&#x3D;0<br>Missile.TiltFrames&#x3D;1<br>Missile.PitchInitial&#x3D;1<br>Missile.PitchFinal&#x3D;1<br>Missile.TurnRate&#x3D;0.5<br>Missile.RaiseRate&#x3D;1<br>Missile.Acceleration&#x3D;1<br>Missile.Altitude&#x3D;2000<br>Missile.BodyLength&#x3D;256<br>Missile.LazyCurve&#x3D;no<br>;Missile.TakeOffAnim&#x3D;SPNUKE<br>;Missile.TrailerAnim&#x3D;SPNUKE<br>Missile.Warhead&#x3D;MWAR;爆炸的动画效果在弹头上<br>Missile.TrailerSeparation&#x3D;2<br>Missile.Damage&#x3D;500<br>Missile.EliteDamage&#x3D;500</p>]]></content>
       
       
       <categories>

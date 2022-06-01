@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.2.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://fastly.jsdelivr.net'>
+  <link rel="preconnect" href="https://fastly.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  <title>自定义导弹翻译以及实例 - Y'blog</title>
+
+  
+    <meta name="description" content="红警自定义导弹相关介绍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义导弹翻译以及实例">
+<meta property="og:url" content="http://example.com/2022/06/01/RA2-DIY/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E5%BC%B9%E7%BF%BB%E8%AF%91%E4%BB%A5%E5%8F%8A%E5%AE%9E%E4%BE%8B/index.html">
+<meta property="og:site_name" content="Y&#39;blog">
+<meta property="og:description" content="红警自定义导弹相关介绍">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-01T13:38:40.163Z">
+<meta property="article:modified_time" content="2022-06-01T13:38:37.000Z">
+<meta property="article:author" content="MR.Y">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+
+<header class="header">
+
+<div class="logo-wrap"><a class="title" href="/"><div class="main">Y'blog</div></a></div>
+<nav class="menu dis-select"></nav></header>
+
+<div class="widgets">
+
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81-Ares2-0-%E5%85%B3%E4%BA%8E%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AF%BC%E5%BC%B9%E7%9A%84%E7%BF%BB%E8%AF%91"><span class="toc-text">1、 Ares2.0 关于自定义导弹的翻译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%AF%E7%94%A8%E5%AF%BC%E5%BC%B9"><span class="toc-text">2、自定义可用导弹</span></a></li></ol></div></div></div>
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/RA2-DIY/">RA2 DIY</a></div><div id="post-meta">发布于&nbsp;<time datetime="2022-06-01T13:38:40.163Z">2022-06-01</time></div></div>
+
+<article class='content md post'>
+<h1 class="article-title"><span>自定义导弹翻译以及实例</span></h1>
+<h3 id="1、-Ares2-0-关于自定义导弹的翻译"><a href="#1、-Ares2-0-关于自定义导弹的翻译" class="headerlink" title="1、 Ares2.0 关于自定义导弹的翻译"></a>1、 Ares2.0 关于自定义导弹的翻译</h3><p>[AircraftType]?Missile.Custom&#x3D; (boolean) 是否为自定义导弹<br>[AircraftType]&gt;Missile.PauseFrames&#x3D; (integer)  发射前延迟integer桢<br>[AircraftType]&gt;Missile.TiltFrames&#x3D; (integer)    从导弹开始上移到真正点火为integer桢（v3 60）<br>[AircraftType]&gt;Missile.PitchInitial&#x3D; (float) 导弹初始倾斜为float<em>90度（v3 0.21）<br>[AircraftType]&gt;Missile.PitchFinal&#x3D; (float)  导弹点火倾斜为float</em>90度<br>[AircraftType]&gt;Missile.TurnRate&#x3D; (float)    导弹拐弯速率<br>[AircraftType]&gt;Missile.RaiseRate&#x3D; (float)    每次导弹升高多少 只对巡航导弹有效<br>[AircraftType]&gt;Missile.Acceleration&#x3D; (float)  发射加速度（V3为0.4）<br>[AircraftType]&gt;Missile.Altitude&#x3D; (integer)   达到这么高后水平移动&#x2F; （V3为768）<br>[AircraftType]&gt;Missile.Damage&#x3D; (integer)    伤害2<br>[AircraftType]&gt;Missile.EliteDamage&#x3D; (integer) 精英伤害<br>[AircraftType]&gt;Missile.BodyLength&#x3D; (integer)  导弹长<br>[AircraftType]&gt;Missile.LazyCurve&#x3D; (boolean) 是否是曲线弹道<br>[AircraftType]&gt;Missile.Warhead&#x3D; (Warhead)<br>[AircraftType]&gt;Missile.EliteWarhead&#x3D; (Warhead)<br>[AircraftType]&gt;Missile.TakeOffAnim&#x3D; (Animation) 起飞动画<br>[AircraftType]&gt;Missile.TrailerAnim&#x3D; (Animation) 拖车动画<br>[AircraftType]&gt;Missile.TrailerSeparation&#x3D; (integer) 拖车分离<br>新增的可选语句<br>[AircraftType]&gt;Missile.Weapon&#x3D; (Weapon)<br>导弹用这个武器来产生伤害，意味着可以很简单地做带辐射的导弹。<br>如果不设置，就用Missile.Damage和Missile.Warhead产生伤害<br>[AircraftType]&gt;Missile.EliteWeapon&#x3D; (Weapon)<br>三星时用的武器</p>
+<h3 id="2、自定义可用导弹"><a href="#2、自定义可用导弹" class="headerlink" title="2、自定义可用导弹"></a>2、自定义可用导弹</h3><p>[VladMissile];注册到飞行器列表里<br>Image&#x3D;V3ROCKET<br>UIName&#x3D;Name:CRMISL<br>Name&#x3D;Long Range Cruise Missile<br>FireAngle&#x3D;0<br>Strength&#x3D;250<br>Primary&#x3D;CruiseMissileWeapon   ；这个是给导弹锁定目标的武器，无效果但range值需要设定小点1即可<br>Category&#x3D;AirPower<br>Armor&#x3D;special_2<br>TechLevel&#x3D;-1<br>Sight&#x3D;1<br>RadarInvisible&#x3D;yes<br>Landable&#x3D;yes<br>MoveToShroud&#x3D;yes<br>Ammo&#x3D;1<br>Speed&#x3D;40<br>Owner&#x3D;Germans,Africans,British    ;不要在意所有者<br>Cost&#x3D;50<br>Points&#x3D;20<br>ROT&#x3D;5<br>Crewed&#x3D;no<br>Explodes&#x3D;no<br>GuardRange&#x3D;30<br>Explosion&#x3D;TWLT070,S_BANG48,S_BRNL58,S_CLSN58,S_TUMU60<br>MaxDebris&#x3D;2<br>Locomotor&#x3D;{B7B49766-E576-11d3-9BD9-00104B972FE8}<br>MovementZone&#x3D;Fly<br>ThreatPosed&#x3D;50<br>DamageParticleSystems&#x3D;SmallGreySSys<br>AuxSound1&#x3D;Dummy<br>ImmuneToPsionics&#x3D;yes<br>NoShadow&#x3D;yes<br>Selectable&#x3D;no<br>Trainable&#x3D;no<br>DontScore&#x3D;yes<br>Missile.Custom&#x3D;yes<br>Missile.PauseFrames&#x3D;0<br>Missile.TiltFrames&#x3D;1<br>Missile.PitchInitial&#x3D;1<br>Missile.PitchFinal&#x3D;1<br>Missile.TurnRate&#x3D;0.5<br>Missile.RaiseRate&#x3D;1<br>Missile.Acceleration&#x3D;1<br>Missile.Altitude&#x3D;2000<br>Missile.BodyLength&#x3D;256<br>Missile.LazyCurve&#x3D;no<br>;Missile.TakeOffAnim&#x3D;SPNUKE<br>;Missile.TrailerAnim&#x3D;SPNUKE<br>Missile.Warhead&#x3D;MWAR;爆炸的动画效果在弹头上<br>Missile.TrailerSeparation&#x3D;2<br>Missile.Damage&#x3D;500<br>Missile.EliteDamage&#x3D;500</p>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="header cap theme"><span>接下来阅读</span></section><section class="body fs14"><a id="next" href="/2022/06/01/OPENWRT/N1%E5%88%B7%E5%85%A5openwrt/">N1刷入openwrt<span class="note">较早</span></a><div class="line"></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+<p>本站由 <a href="http://example.com/">@MR.Y</a> 创建，使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.8.0" title="v1.8.0">Stellar</a> 作为主题。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.8.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js',
+    sitesjs: '/js/plugins/sites.js',
+    friendsjs: '/js/plugins/friends.js',
+  };
+
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://fastly.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@6/swiper-bundle.min.css","js":"https://unpkg.com/swiper@6/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://fastly.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://fastly.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://fastly.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti/umd/heti.min.css","js":"https://unpkg.com/heti/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
